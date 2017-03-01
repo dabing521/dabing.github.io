@@ -1,57 +1,109 @@
-# Welcome to Jekyll!
+title:            Site Title
+description:      Site description for the metas.
+logo:             omikron.png
+disqus_shortname: shortname
+# Assign a default image for your site's header and footer
+default_bg:       default_bg.jpg
+search:           true
+share:            true
+# Read Time is a calculator tp provide post read-time based on word count. Usage is recommended.
+readtime:         true
+# Turn on or off the fin animations in the header and footer
+triangleheader:	  true
+animated_fins:    true
+# Specify the fin color in RGB value
+fin_color:        "255,255,255"
+# Change url to your domain. Leave localhost server or blank when working locally.
+url:          http://hmfaysal.me/hmfaysal-omega-theme
+# baseurl:           
 
-# Website settings
-title: dabing.github.io
-description: Personal blog for Dabing.
-keywords: blog,hangzhou,java,dabing,hebingting
-#baseurl:  /Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
-baseurl:/
-url: http://dabing.github.io  # url should be changed to 'http://www.jack003.com/homepage' as before
-# url: http://127.0.0.1:4000
-img_path: /static/assets/img/blog  # url should be changed to '/homepage/static/assets/img/blog' as before
+# Gems used
+gems:
+  - jekyll-feed
+  - jekyll-archives
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-seo-tag
 
-# author -- index page "about me" section
-author:  # change following line to your infomation.
-  name: BINGTING HE  # Be used at blog posts' author.
-  first_name: He  # Be used at index page about me section.
-  last_name: bingting  # Be used at index page about me section.
-  cv:   # A online CV can be printed as PDF, leave blank if you don't have now
-  email: hebing3124@aliyun.com  # Leave blank if you don't have now
-  facebook_username:   # Leave blank if you don't have now
-  github_username: dabing521  # Leave blank if you don't have now
-  avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
-  skill_icon1:
-    - name: icon-apache
-    - name: fa-linux
-  skill_icon2:
-    - name: fa-linux
-    - name: icon-apache
-  desc: Introduce myself will be here.
+# Archives configuration
+# https://github.com/jekyll/jekyll-archives/blob/master/docs/configuration.md
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    # year: '/:year/'
+    # month: '/:year/:month/'
+    # day: '/:year/:month/:day/'
+    tag: '/archive/tag/:name/'
+    category: '/archive/category/:name/'
 
-# comment
-disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-  name: jalpc
-  public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
+# Owner/author information
+author:
+  name:           Your Name
+  picture:        your-photo.jpg
+  email:          your@email.com
+  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
+  description:    Some Details about yourself
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:
+  facebook:
+  github:
+  linkedin:
+  instagram:
+  tumblr:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    "http://plus.google.com/123123123123132123"
 
-# analytics
-## google analytics
-ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-  # id:
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
 
-## growingIO
-gio:  # if you wanna this feature, go to https://www.growingio.com/ to get your configuration; if not, comment following line.
-  # id:
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+    external: false
+    icon: home
+  - title: Categories
+    url: /categories
+  - title: Tags
+    url: /tags
 
-## donation
-donation: on  # type 'on'/'off' to choice display donation button at post page or not
+# Sitemap configuration
+# https://github.com/kinnetica/jekyll-plugins
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/index.html"
 
-
-# Build settings
-encoding: utf-8
-
-# other settings
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+future:      true
+markdown:    kramdown
 highlighter: rouge
-markdown: kramdown
+paginate:    6
+paginate_path: "/blog/:num/"
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title
+  pages:
+    output: true
+    permalink: /:title
+
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
